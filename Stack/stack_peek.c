@@ -40,6 +40,14 @@ void push(struct Stack *st, int x)
    
 }
 
+int peek(struct Stack st, int position)
+{
+    int x=-1;
+    if (st.top-position+1 <0)
+       printf("Invalid Position\n");
+    x=st.S[st.top-position+1];
+    return x;  
+}
 int main() 
 {
     struct Stack st;                     // creating object of stack
