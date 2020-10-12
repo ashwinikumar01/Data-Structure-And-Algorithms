@@ -27,7 +27,7 @@ void display(struct Queue q)
         printf("%d", q.Q[i]);
         printf("\n");
         i = (i + 1) % q.size;
-    } while (i != (q.rear + 1) % q.size);
+    } while (i != (q.rear + 1) % q.size); /*till one end of circle doesn't touch the other end*/
 }
 
 void enqueue(struct Queue *q, int x)
