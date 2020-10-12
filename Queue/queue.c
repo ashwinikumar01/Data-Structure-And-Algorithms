@@ -19,7 +19,7 @@ void create(struct Queue *q, int size)
 void display(struct Queue q)
 {
     int i;
-    for (i = q.front + 1; i <= q.rear; i++)
+    for (i = q.front + 1; i <= q.rear; i++) /*since at first both front and rear are at -1*/
     {
         printf("%d", q.Q[i]);
         printf("\n");
@@ -63,7 +63,7 @@ int main()
     enqueue(&q, 9);
     enqueue(&q, 11);
     display(q);
-    printf("deleted elment = %d\n", dequeue(&q));
-    printf("deleted elment = %d\n", dequeue(&q));
+    printf("Deleted elment = %d\n", dequeue(&q));
+    printf("Deleted elment = %d\n", dequeue(&q));
     return 0;
 }
