@@ -50,7 +50,7 @@ int dequeue()
 
 void Display()
 {
-    struct Node *p=front;
+    struct Node *p = front;
     while (p)
     {
         printf("%d ", p->data);
@@ -67,7 +67,7 @@ int main()
     enqueue(40);
     enqueue(50);
     Display();
-   printf("%d ",dequeue()) ;
-   printf("%d",dequeue()) ;
+    printf("%d ", dequeue());
+    printf("%d", dequeue());
     return 0;
 }
