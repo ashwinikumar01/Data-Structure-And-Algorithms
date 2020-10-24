@@ -35,31 +35,44 @@ void Display(struct Node *p)
     }
 }
 
-void InsertLast(struct Node *p, int x)
+void SortedInsert(struct Node *p, int x)
 {
-    struct Node *t, *last;
+    struct Node *q = NULL, *t;
     t = (struct Node *)malloc(sizeof(struct Node));
     t->data = x;
     t->next = NULL;
 
-    //there are no nodes
+    //if t is first node i.e. no other nodes are present
     if (first == NULL)
-    {
-        first = last = t;
-    }
+        first = t;
     else
     {
-        last->next = t;
-        last = t;
+        while (p != NULL && p->data < x)
+        {
+            q = p;
+            p = p->next;
+        }
+
+        /*if one node is present*/
+        if (p == first)
+        {
+            t->next = first;
+            first = t;
+        }
+        else
+        {
+            t->next = q->next;
+            q->next = t;
+        }
     }
 }
 
 int main()
 {
-    int A[] = {12, 15, 18, 34};
-    create(A, 4);
-    InsertLast(first, 23);
-    InsertLast(first, 5);
+    int A[] = {12, 45, 67, 89, 100};
+    create(A, 5);
+    SortedInsert(first, 57);
+    SortedInsert(first, 23);
     Display(first);
     return 0;
 }
