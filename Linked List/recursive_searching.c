@@ -40,10 +40,13 @@ struct Node *RSearch(struct Node *p, int key)
 int main()
 {
     struct Node *temp;
-    int A[]={10,12,14,45,29};
-    create(A,5);
-    temp=RSearch(first,12);
-    if(temp)
-    printf("Key is Found %d\n",temp->data);
+    int A[] = {10, 12, 14, 45, 29};
+    create(A, 5);
+    temp = RSearch(first, 12);
+    if (temp)
+        printf("Key is Found %d\n", temp->data);
+    else
+        printf("Key Not Found");
+
     return 0;
 }
