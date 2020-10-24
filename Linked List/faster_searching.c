@@ -61,7 +61,7 @@ int main()
     int A[] = {13, 33, 10, 78, 45};
     create(A, 5);
     temp = FSearch(first, 78);
-   temp = FSearch(first, 5);
+    temp = FSearch(first, 5);
     if (temp)
         printf("Key is found = %d\n", temp->data);
     else
